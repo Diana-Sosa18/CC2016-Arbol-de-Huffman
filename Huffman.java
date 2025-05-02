@@ -1,9 +1,43 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * Clase principal para la compresión y descompresión de archivos utilizando el algoritmo de Huffman.
+ * <p>
+ * Esta clase proporciona un programa principal que demuestra el proceso de compresión y descompresión
+ * mediante el algoritmo de Huffman. El programa lee un archivo de texto original, lo comprime
+ * guardando el resultado en un archivo, luego lo descomprime y compara si el archivo restaurado
+ * es idéntico al original.
+ * </p>
+ * <p>
+ * El algoritmo de Huffman es una técnica de compresión de datos sin pérdida que asigna códigos de longitud
+ * variable a diferentes caracteres, asignando códigos más cortos a los caracteres más frecuentes y códigos
+ * más largos a los menos frecuentes, optimizando así el tamaño del archivo comprimido.
+ * </p>
+ * 
+ * @author Diana Sosa
+ */
 public class Huffman {
+    
+    /**
+     * Método principal que ejecuta la demostración del algoritmo de Huffman.
+     * <p>
+     * El programa realiza los siguientes pasos:
+     * <ol>
+     *   <li>Lee y muestra parte del contenido del archivo original</li>
+     *   <li>Comprime el archivo utilizando el algoritmo de Huffman</li>
+     *   <li>Descomprime el archivo comprimido</li>
+     *   <li>Valida que el archivo original y el descomprimido sean idénticos</li>
+     * </ol>
+     * </p>
+     * 
+     * @param args Argumentos de línea de comandos (no utilizados en esta implementación)
+     */
     public static void main(String[] args) {
+        // Rutas de los archivos a utilizar
         String inputPath = "green-eggs.txt";
         String compressedPath = "compressed.txt";
         String decompressedPath = "decompressed.txt";
@@ -51,8 +85,11 @@ public class Huffman {
             }
 
         } catch (IOException e) {
+            /**
+             * Maneja las excepciones de entrada/salida que puedan ocurrir durante
+             * la lectura o escritura de archivos.
+             */
             e.printStackTrace();
         }
     }
 }
-
