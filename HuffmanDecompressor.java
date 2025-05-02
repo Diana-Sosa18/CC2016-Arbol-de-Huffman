@@ -21,3 +21,4 @@ public class HuffmanDecompressor {
         return in.readAllBits();
     }
 }
+
